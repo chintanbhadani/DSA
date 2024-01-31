@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // Hoisting check
+
+      //   before assign the variable access the variable is called hoisting
+      //   suppose to get not defined but get undefined it is called hoisting
+      //   In global execution context assign the memory for variable and function before execution is called hoisting
+      console.log(x);
+      var x = 7;
+      function getName() {
+        console.log(" Hello world ");
+      }
+      getName();
+      //   console.log(getName);
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <script>
+    // promise is a object of eventual compilation of async operation
+    let flag = false;
+
+    const test = async () => {
+      console.log(" call test :: ");
+      await new Promise((resolve, reject) => {
+        setTimeout(() => {
+          console.log(" resolved after 1 sec:: ");
+          resolve();
+        }, 1000);
+      });
+
+      console.log(" after promise :: ");
+
+      flag = true;
+      console.log(" flag", flag);
+    };
+
+    test();
+
+    // console.log(" flag :: ", flag);
+  </script>
+  <body></body>
+</html>

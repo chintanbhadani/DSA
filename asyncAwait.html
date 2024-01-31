@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // what is async await : it lis handle synchronous operation
+
+      const p1 = new Promise((resolve, reject) => {
+        resolve(" resolved ");
+      }, 100000);
+
+      const p2 = new Promise((resolve, reject) => {
+        resolve(" resolved ");
+      }, 20000);
+
+      // NOTE ::  .then is not wait for resolved the promise
+
+      //   const handlePromise = () => {
+      //     p.then((data) => {
+      //       console.log(" data :: ", data);
+      //     }).catch((err) => {
+      //       console.log(" err :: ", err);
+      //     });
+      //     console.log(" after handle promise ");
+      //   };
+
+      //   handlePromise();
+
+      // NOTE :: it is wait for resolve the promise
+
+      // javascript is synchronous single threaded language
+
+      //  handlePromiseAsyncAwait execute all the line by line promise take 3 sec to execute promise 2 also 3 sec to execute
+
+      // when execution reach to promise then execution is suspend then call back again after promise resolve and start execution from last left point in execution
+
+      const handlePromiseAsyncAwait = async () => {
+        console.log(" Hello world ");
+
+        const a = await p1;
+        console.log(" a ::", a);
+        console.log(" after handle promise 1 ");
+
+        const b = await p2;
+        console.log(" b ::", b);
+        console.log(" after handle promise 2 ");
+      };
+
+      handlePromiseAsyncAwait();
+    </script>
+  </head>
+  <body></body>
+</html>

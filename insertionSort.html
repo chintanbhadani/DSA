@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      const arr = [10, 9, 8, 7, 6, 5];
+      // Sort the element based on element actual place if a[j-1] > a[j] than switch arr[j+1] = arr[j]; j-- arr[j+1] = current
+      for (let i = 1; i < arr.length; i++) {
+        // console.log(" I  ", arr[i]);
+        const current = arr[i];
+        let j = i - 1;
+        while (arr[j] > current && j >= 0) {
+          arr[j + 1] = arr[j];
+          j--;
+        }
+        arr[j + 1] = current;
+      }
+      console.log(arr);
+    </script>
+  </head>
+  <body></body>
+</html>

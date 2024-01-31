@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      const obj = {
+        name: "chintan",
+        fn: function () {
+          console.log(" fn log :: ", this.name);
+        },
+      };
+      // copy reference of obj to user
+      // it is called by reference copy
+      let user = obj;
+      user.name = "bruce";
+
+      console.log(obj);
+      console.log(obj.fn());
+
+      //   we don`t want to change obj value when we assign to user object
+      //   How to solve it
+
+      // Shallow copy
+      // It is copy only first level of object
+
+      // When we try to change the value of nested object element it will not change then how can we solve this problem Deep copy
+      let user2 = Object.assign({}, obj);
+      let user3 = { ...obj };
+
+      // Deep copy
+      // but there is one more issue if there is function in the object it is not copy as deep copy
+      let user4 = JSON.parse(JSON.stringify(obj));
+      console.log(" user4 ", user4);
+
+      //   let x = "abc";
+      //   let y = x;
+      //   y = "pqr";
+      //   console.log(" x :: ", x); // abc
+    </script>
+  </head>
+  <body></body>
+</html>

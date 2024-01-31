@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // https://dev.to/shameel/javascript-promise-all-vs-allsettled-and-race-vs-any-3foj#:~:text=race%3A%20If%20the%20promise%20that,reasons%20of%20all%20rejected%20promises.
+
+      const p1 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve("p1 resolve");
+        }, 3000);
+      });
+
+      const p2 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          reject("p2 reject");
+        }, 2000);
+      });
+
+      const p3 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve("p3 resolve");
+        }, 1000);
+      });
+
+      // Use for parallel API call
+      //   Promise.all([p1, p2, p3])
+      //     .then((data) => {
+      //       console.log(" data :: ", data);
+      //     })
+      //     .catch((err) => {
+      //       console.log(err);
+      //     });
+
+      //   p1 -> 3s
+      //   p2 -> 1s
+      //   p3 -> 3s
+
+      //   after 3s (wait all of them to finish)
+      //   result -> [val1, val2, val3];
+
+      //   if any of one is failed then promise.all is rejected
+      //   it will not wait for other promise
+
+      //   Promise.allSettled([p1, p2, p3]).then((data) => {
+      //     console.log(" data :: ", data);
+      //   });
+
+      //   [p1, p2, p3]
+      //   suppose p2 is failed
+      //   after 3s [val1, err2, val3]
+
+      //   After 1s get settled promise value from promise
+      //   Promise.race([p1, p2, p3]).then((data) => {
+      //     console.log(" data :: ", data);
+      //   });
+
+      // it will give first resolve promise
+      Promise.any([p1, p2, p3])
+        .then((data) => {
+          console.log(" data : ", data);
+        })
+        .catch((err) => {
+          console.log("err : ", err);
+        });
+    </script>
+  </head>
+  <body></body>
+</html>

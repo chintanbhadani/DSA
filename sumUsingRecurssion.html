@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <script>
+    const arr = [1, 1, 2];
+    // Using decrement
+    const getSum = (arr, n) => {
+      if (n <= 0) {
+        return 0;
+      }
+      return arr[n - 1] + getSum(arr, n - 1);
+    };
+    // console.log(getSum(arr, arr.length));
+
+    // Using increment
+    const getSum2 = (arr, n) => {
+      if (n >= arr.length) {
+        return 0;
+      }
+      return arr[n] + getSum2(arr, n + 1);
+    };
+    console.log(getSum2(arr, 0));
+  </script>
+  <body></body>
+</html>

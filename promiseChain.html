@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <script>
+    // there is three step
+    // 1. pending
+    // 2. full fill
+    // 3. reject
+    const promise = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve();
+      }, 5000);
+    });
+
+    promise
+      .then(() => {
+        console.log(" ===>> 1st call back");
+        return "1st step resolve";
+      })
+      .then(() => {
+        console.log(" ===>> 2nd call back");
+
+        return "2st step resolve";
+      })
+      .then(() => {
+        console.log(" ==> 3rd call back ");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  </script>
+  <body></body>
+</html>

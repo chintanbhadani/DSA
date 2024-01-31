@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <script>
+    const arr = [1, 2, 3, 4, 5, 6];
+    let i = 0;
+    j = arr.length - 1;
+
+    console.log(" arr :: ", arr);
+
+    const swap = (i, j) => {
+      const temp = arr[i];
+      arr[i] = arr[j];
+      arr[j] = temp;
+    };
+
+    while (i < j) {
+      swap(i, j);
+      i++;
+      j--;
+    }
+    console.log("Reverse string :: ", arr);
+  </script>
+  <body></body>
+</html>

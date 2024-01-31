@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      const arr = [50, 40, 30, 20, 10];
+      const bubbleSort = (i) => {
+        if (i >= arr.length) {
+          return;
+        }
+        for (let j = 0; j < arr.length - i; j++) {
+          if (arr[j] > arr[j + 1]) {
+            const temp = arr[j];
+            arr[j] = arr[j + 1];
+            arr[j + 1] = temp;
+          }
+        }
+
+        bubbleSort(i + 1);
+      };
+      bubbleSort(0);
+      console.log(" arr : ", arr);
+    </script>
+  </head>
+  <body></body>
+</html>

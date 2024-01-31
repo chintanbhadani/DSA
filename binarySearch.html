@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const arr = [1, 2, 3, 5, 4];
+      let sorted = true;
+
+      const isSorted = (arr, n) => {
+        if (n >= arr.length) {
+          return;
+        }
+        if (arr[n] > arr[n + 1]) {
+          sorted = false;
+        }
+        console.log(arr[n]);
+        isSorted(arr, n + 1);
+      };
+
+      isSorted(arr, 0);
+      console.log(sorted);
+    </script>
+  </body>
+</html>

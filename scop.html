@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // SCOPE : scope is access variable and function is called scope
+      // scope of the variable
+      // lexical environment is function local memory with its lexical environment parent
+      //   first check if variable present in function or not if not then find in parent function
+      //   LOCAL MEMORY ENVIRONMENT + LEXICAL ENVIRONMENT OF PARENT FUNCTION
+      function a() {
+        var b = 20;
+        let c = 30;
+        console.log(b);
+        console.log(c);
+      }
+      var b = 10;
+      a();
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <script>
+    const arr = [1, 2, 3, 4, 5, 6];
+
+    const reverseString = (arr, i, j) => {
+      if (i > j) {
+        return;
+      }
+      const temp = arr[i];
+      arr[i] = arr[j];
+      arr[j] = temp;
+
+      i = i + 1;
+      j = j - 1;
+
+      reverseString(arr, i, j);
+    };
+
+    reverseString(arr, 0, arr.length - 1);
+
+    console.log(arr);
+  </script>
+  <body></body>
+</html>

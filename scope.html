@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //   if (true) console.log(" hello ");
+      var a = 1;
+      //   {
+      //     var a = 10; // block scope
+      //     let b = 20; // block scope
+      //     const c = 30;
+      //     console.log(a);
+      //     console.log(b);
+      //     console.log(c);
+      //   }
+      //   console.log(a);
+
+      //   there id three type of scope
+      // 1. global
+      // 2. script
+      // 3. block
+
+      let b = 1; // store in script scope
+      {
+        var a = 10; // store in global scope
+        let b = 20; // store in block scope
+        const c = 30; // store in block scope
+        console.log(a);
+        console.log(b);
+        console.log(c);
+      }
+      console.log(b);
+
+      // value b is not override the value
+
+      // anonymous function
+      const f = function () {
+        console.log(" function called ");
+      };
+      f();
+
+      const a = () => {
+        console.log(" hello :: ");
+      };
+      a();
+
+      // scope of a
+      const a = 20;
+      {
+        const a = 100;
+        {
+          const a = 200;
+          consol.log(a);
+        }
+      }
+    </script>
+  </head>
+  <body></body>
+</html>
