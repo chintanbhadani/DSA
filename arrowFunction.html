@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function print() {
+        console.log(arguments);
+        console.log(this);
+      }
+      print("hello", 400, false);
+
+      const print2 = () => {
+        console.log(arguments);
+        console.log(this);
+      };
+
+      print2("hello", 400, false);
+    </script>
+  </head>
+  <body></body>
+</html>

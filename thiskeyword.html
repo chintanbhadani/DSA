@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      "use strict";
+      // this inside the function
+
+      function x() {
+        // In non strict mod we can get this as window object
+        // this.fname = "chintan";
+        // console.log(this.fname);
+        console.log(this);
+      }
+
+      x(); // get undefined
+      window.x(); // get window object
+
+      // this with arrow function and normal function
+      // arrow is not own this object it is refer to it lexical environment context
+      const obj = {
+        name: "chintan",
+        a: function () {
+          console.log(this);
+        },
+        b: () => {
+          const b = "b";
+          console.log(this);
+          //   const y = () => {
+          //     console.log(" y ", this.name);
+          //   };
+          //   y();
+        },
+      };
+      //   obj.a();
+      //   obj.b();
+
+      //   console.log(window.a);
+    </script>
+  </head>
+
+  <body></body>
+</html>

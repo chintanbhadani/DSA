@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      const str = "aabc";
+      let outPut = "";
+      for (let i = 0; i < str.length; i++) {
+        let tempLetter = str[i];
+        let count = 1;
+        for (let j = i + 1; j < str.length; j++) {
+          if (tempLetter === str[j]) {
+            count++;
+          } else {
+            break;
+          }
+        }
+        outPut = outPut + (str[i] + count);
+      }
+
+      console.log(outPut.split("").reverse().join(""));
+      //   console.log(" outPut :: ", outPut);
+    </script>
+  </head>
+  <body></body>
+</html>
