@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function countWords(str, word) {
+        const words = str.split(" ");
+        let count = 0;
+        for (let i = 0; i < words.length; i++) {
+          if (words[i].toLowerCase().includes(word)) {
+            count++;
+          }
+        }
+        return count;
+      }
+
+      const str =
+        "How many times does the word 'how many' appear in this string?";
+      const count = countWords(str, "how");
+
+      console.log(count); // 2
+    </script>
+  </head>
+  <body></body>
+</html>

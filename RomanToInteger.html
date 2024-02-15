@@ -47,7 +47,7 @@
       // 27 XXVII
       // 28 XXVIII
       // 29 XXIX
-      // 30 Xxx
+      // 30 XXX
 
       const convert = (roman) => {
         let ans = 0;
@@ -57,7 +57,7 @@
               ans = ans + value(roman[i]);
             } else {
               ans = ans + (value(roman[i + 1]) - value(roman[i]));
-              i++; // increase the
+              i++; // increase the index
             }
           } else {
             ans = ans + value(roman[i]);
@@ -67,7 +67,7 @@
         return ans;
       };
 
-      console.log(" ===>>>  ", convert("XXIX"));
+      console.log(" ===>>>  ", convert("XXVIII"));
     </script>
   </head>
   <body></body>
