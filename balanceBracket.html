@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let input = "[()]{}{[()()]()}";
+      //   let input = "[(])";
+
+      const isBalance = () => {
+        const arr = [];
+        for (let i = 0; i < input.length; i++) {
+          if (input[i] == "(" || input[i] === "[" || input[i] === "{") {
+            arr.push(input[i]);
+          }
+
+          if (input[i] === "]") {
+            const x = arr.pop();
+            if (x === "{" || x === "(") {
+              return false;
+            }
+          }
+          if (input[i] === "}") {
+            const x = arr.pop();
+            if (x === "(" || x === "[") {
+              return false;
+            }
+          }
+          if (input[i] === ")") {
+            const x = arr.pop();
+            if (x === "[" || x === "{") {
+              return false;
+            }
+          }
+        }
+
+        return arr.length === 0 ? true : false;
+      };
+
+      console.log("  is balance :: ", isBalance(input));
+    </script>
+  </head>
+  <body></body>
+</html>

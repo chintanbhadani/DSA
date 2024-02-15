@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function value(r) {
+        if (r == "I") return 1;
+        if (r == "V") return 5;
+        if (r == "X") return 10;
+        if (r == "L") return 50;
+        if (r == "C") return 100;
+        if (r == "D") return 500;
+        if (r == "M") return 1000;
+        return -1;
+      }
+
+      // 1 I
+      // 2 II
+      // 3 III
+      // 4 IV
+      // 5 V
+      // 6 VI
+      // 7 VII
+      // 8 VIII
+      // 9 IX
+      // 10 X
+
+      // 11 XI
+      // 12 XII
+      // 13 XIII
+      // 14 XIV
+      // 15 XV
+      // 16 XVI
+      // 17 XVII
+      // 18 XVIII
+      // 19 XIX
+      // 20 xx
+
+      // 21 XXI
+      // 22 XXII
+      // 23 XXIII
+      // 24 XXIV
+      // 25 XXV
+      // 26 XXVI
+      // 27 XXVII
+      // 28 XXVIII
+      // 29 XXIX
+      // 30 Xxx
+
+      const convert = (roman) => {
+        let ans = 0;
+        for (let i = 0; i < roman.length; i++) {
+          if (i + 1 < roman.length) {
+            if (roman[i] >= roman[i + 1]) {
+              ans = ans + value(roman[i]);
+            } else {
+              ans = ans + (value(roman[i + 1]) - value(roman[i]));
+              i++; // increase the
+            }
+          } else {
+            ans = ans + value(roman[i]);
+          }
+          console.log(" ans :: ", i, ans);
+        }
+        return ans;
+      };
+
+      console.log(" ===>>>  ", convert("XXIX"));
+    </script>
+  </head>
+  <body></body>
+</html>
