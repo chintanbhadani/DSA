@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const str1 = "jsn"
+        const str2 = "silent"
+
+        const isAnagram = (s1, s2) => {
+            const n1 = s1.length;
+            const n2 = s2.length;
+
+            if (n1 !== n2)
+                return false
+
+            const a1 = s1.split("").sort().join("");
+            const a2 = s2.split("").sort().join("");
+
+            console.log(" a1 ", a1);
+            console.log(" a2 ", a2);
+            return (a1 === a2)
+
+            // s1.sort();
+            // s2.sort();
+
+            // console.log(s1, s2);
+        }
+
+        console.log(isAnagram(str1, str2));
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

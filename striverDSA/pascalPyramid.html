@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 1
+        // 11
+        // 121
+        // 1331
+
+        // nCr = n! / (n-r)! * r!
+
+        // Find the 3n2 element 
+
+        const nCr = (n, r) => {
+            let res = 1;
+            for (let i = 0; i < r; i++) {
+                res = res * (n - i)
+                res = res / (i + 1)
+            }
+            return res;
+        }
+
+        // console.log(nCr(3 - 1, 2 - 1))
+
+        // print the 6 th row
+
+        // function nCr(n, r) {
+        //     let res = 1;
+
+        //     // calculating nCr:
+        //     for (let i = 0; i < r; i++) {
+        //         res = res * (n - i);
+        //         res = res / (i + 1);
+        //     }
+        //     return res;
+        // }
+
+        function pascalTriangle(n) {
+            let ans = 1;
+            // console.log(ans + " "); // printing 1st element
+
+            const arr = [1]
+
+            //Printing the rest of the part:
+            for (let i = 1; i < n; i++) {
+                ans = ans * (n - i);
+                ans = ans / i;
+                arr.push(ans)
+                // console.log(ans + " ");
+            }
+
+            return arr;
+        }
+
+
+
+        const n = 6;
+
+        for (let i = 1; i <= 6; i++) {
+
+            console.log(pascalTriangle(i))
+        }
+
+
+
+
+
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

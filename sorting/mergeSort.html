@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // const arr = [3, 1, 2, 4, 1, 5, 2, 6, 4];
+        const arr = [9, 8, 7, 6, 5, 4, 3, 2, 1];
+
+        // const arr1 = [1, 3, 4]
+        // const arr2 = [2, 5, 6, 7]
+        // let k = 0;
+        // let j = 0;
+        // let i = 0;
+
+        // const resArray = Array(arr1.length + arr2.length).fill(0);
+
+        // const mergeSortedArray = () => {
+        //     while (i < arr1.length && j < arr2.length) {
+
+        //         if (arr1[i] < arr2[j]) {
+        //             resArray[k++] = arr1[i++]
+        //         } else {
+        //             resArray[k++] = arr2[j++]
+        //         }
+        //     }
+
+        //     while (i < arr1.length) {
+        //         resArray[k++] = arr1[i++]
+        //     }
+        //     while (j < arr2.length) {
+        //         resArray[k++] = arr2[j++]
+        //     }
+        // }
+
+
+        const merge = (arr, l, r) => {
+
+            console.log(" ====>>> l :: ", l, r)
+            if (l > r) {
+                return
+            }
+            let k = l;
+            let j = 0;
+            let i = 0;
+
+            const mid = Math.floor((l + r) / 2);
+
+            const arr1 = arr.slice(l, mid + 1)
+            const arr2 = arr.slice(mid + 1, r + 1)
+
+            while (i < arr1.length && j < arr2.length) {
+
+                if (arr1[i] < arr2[j]) {
+                    arr[k++] = arr1[i++]
+                } else {
+                    arr[k++] = arr2[j++]
+                }
+            }
+
+            while (i < arr1.length) {
+                arr[k++] = arr1[i++]
+            }
+            while (j < arr2.length) {
+                arr[k++] = arr2[j++]
+            }
+
+
+        }
+
+        // console.log(" resArray :: ", resArray);
+
+
+        const mergeFunc = (arr, l, r) => {
+
+            if (l < r) {
+                // console.log(" r :: ", r);
+                
+                const mid = Math.floor((l + r) / 2)
+                // console.log(" mid :: ", mid)
+
+                console.log(" --------------------------  ")
+                console.log(" l - mid ", l, mid);
+                console.log(" mid + 1 - r ", mid + 1, r);
+
+                mergeFunc(arr, l, mid);
+                mergeFunc(arr, mid + 1, r);
+
+                merge(arr, l, r)
+            }
+        }
+
+
+        mergeFunc(arr, 0, arr.length - 1)
+
+        console.log(" arr :: ", arr)
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

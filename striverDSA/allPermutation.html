@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const arr = [1, 2, 3];
+        const result = []
+
+        const swap = (arr, index, i) => {
+            const temp = arr[i];
+            arr[i] = arr[index];
+            arr[index] = temp;
+        }
+
+        const solve = (arr, result, index) => {
+
+            if (index >= arr.length) {
+                const res = [...arr]
+                result.push(res)
+                return
+            }
+
+            for (let i = index; i < arr.length; i++) {
+                swap(arr, index, i)
+                solve(arr, result, index + 1)
+                swap(arr, index, i)
+            }
+        }
+
+        solve(arr, result, 0);
+        console.log(" result :: ", result);
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

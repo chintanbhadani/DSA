@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        // SELECTION SORT
+        // Select the min element from the array set the first position
+        const arr = [23, 19, 18, 16, 5];
+
+        const swap = (arr, i, min) => {
+            const temp = arr[i];
+            arr[i] = arr[min];
+            arr[min] = temp;
+        }
+
+        for (let i = 0; i < arr.length - 1; i++) {
+            let min = i
+            for (let j = i; j < arr.length; j++) {
+                if (arr[j] < arr[min]) {
+                    min = j;
+                }
+            }
+            swap(arr, i, min)
+        }
+
+        console.log(" result :: ", arr)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

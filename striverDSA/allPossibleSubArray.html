@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const arr = [1, 2, 3, 4, 5];
+        const outpUt = []
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = i; j < arr.length; j++) {
+                const temp = arr.slice(i, j + 1)
+                outpUt.push(temp)
+            }
+        }
+
+        console.log(" outpUt  :: ", outpUt);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
