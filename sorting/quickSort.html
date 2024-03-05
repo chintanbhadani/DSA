@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // Pick up the pivot and place it to currect position
+
+      // Pivot can be any thing like fist, last, mid etc
+
+      // smaller on left and larger on right
+
+      const arr = [4, 6, 2, 5, 7, 9, 1, 3];
+
+      console.log(" initial Array :: ", arr);
+
+      //   [2, 1, 3, 4, 5, 6, 7, 9];  smaller on left and larger on right
+
+      const swap = (arr, i, j) => {
+        const temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+      };
+
+      const partition = (arr, low, high) => {
+        let pivot = arr[low];
+        let i = low;
+        let j = high;
+
+        while (i < j) {
+          while (arr[i] <= pivot && i <= high - 1) {
+            i++;
+          }
+          while (arr[j] > pivot && j >= low + 1) {
+            j--;
+          }
+
+          if (i < j) swap(arr, i, j);
+        }
+        swap(arr, low, j);
+        return j;
+      };
+
+      const qs = (arr, low, high) => {
+        if (low < high) {
+          const pIndex = partition(arr, low, high);
+          qs(arr, low, pIndex - 1);
+          qs(arr, pIndex + 1, high);
+        }
+      };
+
+      qs(arr, 0, arr.length - 1);
+
+      console.log(" result :: ", arr);
+    </script>
+  </head>
+  <body></body>
+</html>
